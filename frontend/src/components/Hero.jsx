@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <section className="text-center py-24 px-6">
@@ -12,13 +13,19 @@ export default function Hero() {
 
       <div className="flex flex-wrap justify-center gap-4 mt-10">
 
-        <button className="bg-amber-500 text-white px-6 py-3 rounded-xl">
-          Report Lost Item
-        </button>
+        <Link
+  to="/lost"
+  className="bg-amber-500 text-white px-6 py-3 rounded-xl"
+>
+  Report Lost Item
+</Link>
 
-        <button className="bg-emerald-600 text-white px-6 py-3 rounded-xl">
-          Browse Found Items
-        </button>
+<Link
+  to="/found"
+  className="bg-emerald-600 text-white px-6 py-3 rounded-xl"
+>
+  Browse Found Items
+</Link>
 
       </div>
 
