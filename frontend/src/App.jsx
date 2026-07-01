@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import LostItem from "./pages/LostItem";
 import FoundItem from "./pages/FoundItem";
 import Profile from "./pages/Profile";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 function App() {
   return (
@@ -14,10 +15,42 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/lost" element={<LostItem />} />
-      <Route path="/found" element={<FoundItem />} />
-      <Route path="/profile" element={<Profile />} />
+
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/lost"
+        element={
+          <ProtectedRoute>
+            <LostItem />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/found"
+        element={
+          <ProtectedRoute>
+            <FoundItem />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/profile"
+        element={
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 }
