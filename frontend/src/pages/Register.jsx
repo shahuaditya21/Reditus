@@ -3,8 +3,7 @@ import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
-
+import Navbar from "../components/landing/Navbar";
 function Register() {
   const navigate = useNavigate();
   const [name, setName] = useState("");
@@ -29,12 +28,12 @@ function Register() {
 
       alert("Account created successfully!");
 
-setName("");
-setEmail("");
-setPassword("");
-setConfirmPassword("");
+      setName("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
 
-navigate("/login");
+      navigate("/login");
     } catch (error) {
       alert(error.message);
     }
